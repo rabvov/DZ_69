@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class Beard {
+public class Beard extends Animal {
+    public Beard(String nameAnimal, String colorAnimal) {
+        super(nameAnimal, colorAnimal);
+    }
 }

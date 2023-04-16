@@ -1,12 +1,20 @@
 public class NameAnimal<T extends Animal> {
-    private T x;
 
-    public NameAnimal(T x) {
-        this.x = x;
+    private String x;
+    private String y;
+
+    public void name (Animal obj){
+        System.out.print("Животное называеться "+x);
+        System.out.println(", и оно "+y+" цвета");
     }
 
-    public void name() {
-        System.out.print("Имя животного " + this.x.getNameAnimal());
-        System.out.print(", а его цвет " + this.x.getColorAnimal());
+    public NameAnimal(T animal) {
+        this.x = animal.getNameAnimal();
+        this.y = animal.getColorAnimal();
+        name(animal);
     }
+
+
+
+
 }

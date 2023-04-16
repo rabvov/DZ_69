@@ -4,10 +4,15 @@ public class Main {
         Double list2 = 5.0;
         Average name = new Average(list1, list2);
         name.className();
-        new Cat("Cat", "Black");
-        new Dog("Dog", "White");
+
+        Cat cat = new Cat("Cat", "Black");
+        Dog dog = new Dog("Dog", "White");
         Beard beard = new Beard("Beard", "Red");
-        NameAnimal list = new NameAnimal(beard);
-        list.name();
+
+        NameAnimal list = new NameAnimal<>(cat);
+
+
+
+
     }
 }

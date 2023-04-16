@@ -1,0 +1,293 @@
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package PACKAGE_NAME;public class Main {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision d52802efa7d6cc557bd512ef2e2b62d9c71f2bab)
++++ b/src/Main.java	(date 1681637309545)
+@@ -1,2 +1,22 @@
+-package PACKAGE_NAME;public class Main {
++public class Main {
++
++    public static void main(String[] args) {
++
++        Integer list1 = 5;
++        Double list2 = 5.0;
++
++
++
++        Average name = new Average (list1,list2);
++        name.className();
++
++        Cat cat = new Cat("Cat","Black");
++        Dog dog = new Dog("Dog","White");
++        Beard beard = new Beard("Beard","Red");
++
++        NameAnimal list = new NameAnimal(beard);
++        list.name();
++
++    }
+ }
++
+Index: src/Average.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package PACKAGE_NAME;public class Average {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Average.java b/src/Average.java
+--- a/src/Average.java	(revision d52802efa7d6cc557bd512ef2e2b62d9c71f2bab)
++++ b/src/Average.java	(date 1681635157281)
+@@ -1,2 +1,22 @@
+-package PACKAGE_NAME;public class Average {
++public class Average <T,V> {
++    private T x;
++    private V y;
++
++    public Average(T x, V y) {
++        this.x = x;
++        this.y = y;
++    }
++
++
++    public void className (){
++        Boolean s = false;
++        s = x.getClass().equals(y.getClass());
++        if (s==true)
++            System.out.println("Классы одинаковые");
++        else
++            System.out.println("Классы не одинаковые");
++
++
++    }
++
+ }
+Index: src/Dog.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package PACKAGE_NAME;public class Dog {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Dog.java b/src/Dog.java
+--- a/src/Dog.java	(revision d52802efa7d6cc557bd512ef2e2b62d9c71f2bab)
++++ b/src/Dog.java	(date 1681635850161)
+@@ -1,2 +1,6 @@
+-package PACKAGE_NAME;public class Dog {
++public class Dog extends Animal {
++
++    public Dog(String nameAnimal, String colorAnimal) {
++        super(nameAnimal, colorAnimal);
++    }
+ }
+Index: src/Animal.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package PACKAGE_NAME;public class Animal {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Animal.java b/src/Animal.java
+--- a/src/Animal.java	(revision d52802efa7d6cc557bd512ef2e2b62d9c71f2bab)
++++ b/src/Animal.java	(date 1681636349151)
+@@ -1,2 +1,17 @@
+-package PACKAGE_NAME;public class Animal {
++public class Animal <T extends String,V extends String> {
++    private T nameAnimal;
++    private V colorAnimal;
++
++    public Animal(T nameAnimal, V colorAnimal) {
++        this.nameAnimal = nameAnimal;
++        this.colorAnimal = colorAnimal;
++    }
++
++    public T getNameAnimal() {
++        return nameAnimal;
++    }
++
++    public V getColorAnimal() {
++        return colorAnimal;
++    }
+ }
+Index: src/NameAnimal.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package PACKAGE_NAME;public class NameAnimal {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/NameAnimal.java b/src/NameAnimal.java
+--- a/src/NameAnimal.java	(revision d52802efa7d6cc557bd512ef2e2b62d9c71f2bab)
++++ b/src/NameAnimal.java	(date 1681636601838)
+@@ -1,2 +1,12 @@
+-package PACKAGE_NAME;public class NameAnimal {
++public class NameAnimal <T extends Animal>{
++    private T x;
++
++    public NameAnimal(T x) {
++        this.x = x;
++    }
++
++    public void name (){
++        System.out.print("Имя животного "+x.getNameAnimal());
++        System.out.print(", а его цвет "+x.getColorAnimal());
++    }
+ }
+Index: src/Cat.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package PACKAGE_NAME;public class Cat {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Cat.java b/src/Cat.java
+--- a/src/Cat.java	(revision d52802efa7d6cc557bd512ef2e2b62d9c71f2bab)
++++ b/src/Cat.java	(date 1681636265977)
+@@ -1,2 +1,8 @@
+-package PACKAGE_NAME;public class Cat {
++public class Cat extends Animal{
++
++    public Cat(String nameAnimal, String colorAnimal) {
++        super(nameAnimal, colorAnimal);
++    }
++
++
+ }
+Index: src/Beard.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package PACKAGE_NAME;public class Beard {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Beard.java b/src/Beard.java
+--- a/src/Beard.java	(revision d52802efa7d6cc557bd512ef2e2b62d9c71f2bab)
++++ b/src/Beard.java	(date 1681636484733)
+@@ -1,2 +1,6 @@
+-package PACKAGE_NAME;public class Beard {
++public class Beard extends Animal{
++
++    public Beard(String nameAnimal, String colorAnimal) {
++        super(nameAnimal, colorAnimal);
++    }
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"567558ba-183d-43ae-bf8b-c2c440065643\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OV0sZu8Itn71Y2nbzdymStjxEA\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"567558ba-183d-43ae-bf8b-c2c440065643\" name=\"Changes\" comment=\"\" />\r\n      <created>1681630651808</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1681630651808</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision d52802efa7d6cc557bd512ef2e2b62d9c71f2bab)
++++ b/.idea/workspace.xml	(date 1681637316605)
+@@ -1,14 +1,44 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="567558ba-183d-43ae-bf8b-c2c440065643" name="Changes" comment="" />
++    <list default="true" id="567558ba-183d-43ae-bf8b-c2c440065643" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animal.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Average.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Average.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Beard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beard.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cat.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dog.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/NameAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NameAnimal.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Class" />
++      </list>
++    </option>
++  </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="HighlightingSettingsPerFile">
++    <setting file="file://$PROJECT_DIR$/src/Animal.java" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/Beard.java" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/Cat.java" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/Dog.java" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/Main.java" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/NameAnimal.java" root0="FORCE_HIGHLIGHTING" />
++  </component>
++  <component name="MarkdownSettingsMigration">
++    <option name="stateVersion" value="1" />
+   </component>
+   <component name="ProjectId" id="2OV0sZu8Itn71Y2nbzdymStjxEA" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+@@ -19,9 +49,24 @@
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true"
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+   }
+ }]]></component>
++  <component name="RunManager">
++    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Main" />
++      <module name="DZ_69" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Application.Main" />
++      </list>
++    </recent_temporary>
++  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -33,4 +78,32 @@
+     </task>
+     <servers />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State>
++              <option name="CUSTOM_BOOLEAN_PROPERTIES">
++                <map>
++                  <entry key="Show.Git.Branches" value="false" />
++                </map>
++              </option>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="master" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
+ </project>
+\ No newline at end of file
